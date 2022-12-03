@@ -5,11 +5,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>let声明变量</title>
 </head>
 
 <body>
-
+  <script>
+    let a
+    let b
+    a = 100
+    //let声明变量特性
+    //* 不可重复声明
+    //* 块级作用域      全局 函数 eval
+    {
+      let girl = '闫妙'
+    }
+    let girl = '郭晶晶'
+    //* 不存在变量提升
+    let men
+    console.log(men)
+    //* 不影响作用域链
+    {
+      let school = '尚硅谷'
+      function fn() {
+        console.log(school)
+      }
+      fn()
+    }
+  </script>
 </body>
 
 </html>

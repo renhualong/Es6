@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let实践练习</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      border-radius: 4px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+      padding: 10px 16px;
+    }
+
+    .item {
+      border: rgb(255, 0, 0);
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      background-color: black;
+    }
+
+    .change {
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>点击切换颜色</h2>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+
+  <script>
+    const $ = (s) => { document.querySelector(s) }
+    const $$ = (ss) => { document.querySelectorAll(ss) }
+
+    document.querySelectorAll('.item').forEach($node => {
+      $node.onclick = function () {
+        $node.classList.add('change')
+        setTimeout(() => {
+          $node.classList.remove('change')
+        }, 1000)
+      }
+    });
+  </script>
+</body>
+
+</html>
